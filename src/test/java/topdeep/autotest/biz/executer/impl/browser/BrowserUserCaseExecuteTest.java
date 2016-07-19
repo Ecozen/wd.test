@@ -15,6 +15,8 @@ import org.testng.annotations.Parameters;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -30,10 +32,11 @@ BrowserUserCaseExecute executer = new BrowserUserCaseExecute();
 String filePath = "";
 Workbook wb = null;
 Sheet actionSheet = null; 
-
+AtTestContext context = new AtTestContext();
+Map<String, Object> data = new HashMap<String, Object>();
   @BeforeTest
-  @Parameters({"url","workBook"})
-  public void beforeTest(String url,String path) {
+  @Parameters({"url","workBook","version"})
+  public void beforeTest(String url,String path,String version) throws MalformedURLException {
       filePath = path;
       try {
       	if (filePath.endsWith("xlsx")) {
@@ -47,9 +50,10 @@ Sheet actionSheet = null;
           e.printStackTrace();
       }
       actionSheet = wb.getSheet("Lionfund_openAccount_action");
-	  executer.initParam(url, actionSheet);
+	  context.setVersion(version);
+	  context.createUrl(url);
+	  context.setPlatform();
   }
-
   @AfterTest
   public void afterTest() {
 	  
@@ -57,14 +61,16 @@ Sheet actionSheet = null;
 
 
   @Test
-  public void execute() throws Exception {
+  public void executeTest() throws Exception {
 	AtTestCase userCase = new ExcelDataProvider(actionSheet , true, true, 0).getdata();
-	AtTestContext context = null;
+	
 	AtTestResult testResult = null;
 	AtTestResultUserCase testResultUserCase = null;
 	AtTestDataGroup testDataGroup = null;
-	Map<String, Object> data = null;
 	Log taskLog = null;
+
+	executer.beforeExecute(userCase, context, data, taskLog);
 	executer.execute(userCase, context, testResult, testResultUserCase, testDataGroup, data, taskLog);
+	executer.afterExecute(userCase, context, data, taskLog);
   }
 }

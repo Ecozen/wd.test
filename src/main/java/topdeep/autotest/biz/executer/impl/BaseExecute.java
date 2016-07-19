@@ -13,17 +13,12 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import topdeep.autotest.biz.common.UserCaseManageBiz;
 import topdeep.autotest.entity.constant.EnumType.CheckType;
-import topdeep.autotest.entity.db.AtObjParams;
-import topdeep.autotest.entity.db.AtObjParamsExample;
+import topdeep.autotest.entity.data.AtObjParams;
 import topdeep.autotest.entity.params.ApplicationParam;
-import topdeep.common.util.EnumTypeUtil;
 
-import common.util.StringUtils;
 
 /**
  * @author niexin
@@ -31,27 +26,14 @@ import common.util.StringUtils;
  */
 public abstract class BaseExecute implements topdeep.autotest.entity.execute.BaseExecute {
 
-	@Autowired
-	@Qualifier("userCaseManageBiz")
 	protected UserCaseManageBiz userCaseManageBiz;
 
-	@Autowired
 	protected ApplicationParam applicationParam;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.entity.execute.BaseExecute#getParamList()
-	 */
 	public List<AtObjParams> getInitParamList() {
 		return new ArrayList<AtObjParams>();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.entity.execute.BaseExecute#getBeanVersion()
-	 */
 	public int getBeanVersion() {
 		return 1;
 	}
@@ -67,9 +49,7 @@ public abstract class BaseExecute implements topdeep.autotest.entity.execute.Bas
 	}
 
 	public List<AtObjParams> queryParamList(String objId, String objType) throws Exception {
-		AtObjParamsExample condition = new AtObjParamsExample();
-		condition.or().andIdEqualTo(objId).andObjTypeEqualTo(objType);
-		List<AtObjParams> paramList = userCaseManageBiz.atObjParamsSelectObjects(condition);
+		List<AtObjParams> paramList = null ;
 		return paramList;
 	}
 

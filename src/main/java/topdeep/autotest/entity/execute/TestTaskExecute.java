@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import topdeep.autotest.entity.db.AtTestTask;
+import topdeep.autotest.entity.data.AtTestTask;
 
 /**
  * @author niexin

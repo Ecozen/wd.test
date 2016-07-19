@@ -8,26 +8,19 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.openqa.selenium.WebDriver;
-import org.springframework.stereotype.Service;
 
 import topdeep.autotest.biz.executer.impl.BaseExecute;
 import topdeep.autotest.entity.constant.EnumType.ObjType;
 import topdeep.autotest.entity.constant.EnumType.ParamType;
 import topdeep.autotest.entity.constant.EnumType.TestContextDataKey;
 import topdeep.autotest.entity.constant.EnumType.TestResult;
-import topdeep.autotest.entity.db.AtObjParams;
-import topdeep.autotest.entity.db.AtUserCaseAction;
+import topdeep.autotest.entity.data.AtObjParams;
+import topdeep.autotest.entity.data.AtUserCaseAction;
 import topdeep.autotest.entity.execute.ObjRegisterAttribute;
 import topdeep.autotest.entity.execute.UserCaseActionExecute;
 import topdeep.autotest.entity.execute.UserCaseExecute;
 
-/**
- * @author niexin
- *
- */
-@Service("Pmys8y7R8aFujt3gX0JEA..o")
-@ObjRegisterAttribute(BeanId = "Pmys8y7R8aFujt3gX0JEA..o")
-public class ElementWaitAction extends BaseExecute implements UserCaseActionExecute {
+public class ElementWaitAction implements UserCaseActionExecute {
 
 	public static String PARAM_TARGET_PARAM = "targetParam";
 	public static String PARAM_ELEMENT_LOCATE_TYPE = "eleLocType";
@@ -61,27 +54,11 @@ public class ElementWaitAction extends BaseExecute implements UserCaseActionExec
 	}
 
 	public String getActionDesc(List<AtObjParams> paramList) {
-		Map<String, AtObjParams> paramMap = convertParamListToMap(paramList);
+		Map<String, AtObjParams> paramMap ;
 		String ret = getName() + ":";
-		if (paramMap.containsKey(PARAM_ELEMENT_LOCATE_TYPE)) {
-			String locType = paramMap.get(PARAM_ELEMENT_LOCATE_TYPE).getParamValue();
-			if (locType == null) {
-				locType = "";
-			}
-			ret += "定位方式-" + locType;
-		}
 		String targetParam = "";
-		if (paramMap.containsKey(PARAM_TARGET_PARAM)) {
-			targetParam = paramMap.get(PARAM_TARGET_PARAM).getParamValue();
-			if (targetParam == null) {
-				targetParam = "";
-			}
-		}
 		ret += ",目标-" + targetParam;
 		String timeOut = "";
-		if (paramMap.containsKey(PARAM_TIME_OUT)) {
-			timeOut = paramMap.get(PARAM_TIME_OUT).getParamValue();
-		}
 		ret += ",超时" + timeOut + "毫秒";
 		return ret;
 	}
@@ -94,7 +71,7 @@ public class ElementWaitAction extends BaseExecute implements UserCaseActionExec
 	 */
 	public TestResult execute(UserCaseExecute userCaseExecute, AtUserCaseAction userCaseAction, List<AtObjParams> paramList, Map<String, Object> data,
 			Log taskLog) throws Exception {
-		Map<String, AtObjParams> paramMap = convertParamListToMap(paramList);
+		Map<String, AtObjParams> paramMap = null ;
 		BrowserUserCaseExecute execute = (BrowserUserCaseExecute) userCaseExecute;
 		TestResult result = TestResult.Success;
 		if (!paramMap.containsKey(PARAM_ELEMENT_LOCATE_TYPE)) {
@@ -123,28 +100,11 @@ public class ElementWaitAction extends BaseExecute implements UserCaseActionExec
 		return TestResult.Fail;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.biz.executer.impl.BaseExecute#getParamList()
-	 */
-	@Override
 	public List<AtObjParams> getInitParamList() {
-		List<AtObjParams> paramList = super.getInitParamList();
-		paramList.add(createNewParam(getId(), ObjType.UserCaseActionExecute.getValue(), getId(), PARAM_ELEMENT_LOCATE_TYPE, "目标定位方式", "需要点击的元素定位方式",
-				ParamType.EleLocType.getValue(), "", "id", "", "1", "1", 1));
-		paramList.add(createNewParam(getId(), ObjType.UserCaseActionExecute.getValue(), getId(), PARAM_TARGET_PARAM, "目标定位参数", "根据定位方式不同而不同",
-				ParamType.String.getValue(), "", null, null, "1", "1", 2));
-		paramList.add(createNewParam(getId(), ObjType.UserCaseActionExecute.getValue(), getId(), PARAM_TIME_OUT, "等待时间", "等待时间，毫秒单位",
-				ParamType.Integer.getValue(), "2000", null, null, "1", "1", 3));
+		List<AtObjParams> paramList = null ;
 		return paramList;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.entity.execute.BaseExecute#getBeanVersion()
-	 */
 	public int getBeanVersion() {
 		return 4;
 	}

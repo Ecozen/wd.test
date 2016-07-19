@@ -59,8 +59,6 @@ import topdeep.autotest.util.SequenceUtil;
  */
 public class BrowserUserCaseExecute implements UserCaseExecute {
 
-	private String url;
-	private Sheet sheet ;
 	/*
 	 * 查出测试用例所关联的所有用例和用例相关联的测试数据，然后逐个用例的执行所有的测试动作
 	 * 
@@ -82,7 +80,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		}
 		
 		List<AtUserCaseAction> actionList = userCase.getActionlist();
-//		WebDriver webDriver = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
+		WebDriver webDriver = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
 		
 		int actionNo = 1;
 		TestResult userCaseResult = TestResult.Success;
@@ -97,6 +95,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 			if (userCaseResult != TestResult.Success) {
 				break;
 			}
+			actionNo++;
 		}
 
 		return userCaseResult;
@@ -109,11 +108,10 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 	 */
 	public void beforeExecute(AtTestCase userCase, AtTestContext context, Map<String, Object> data, Log taskLog) throws Exception {
 		DesiredCapabilities capabilities = null;
-			// default
 		capabilities = DesiredCapabilities.firefox();
-			
-		
-		URL remoteAddress = new URL(url);
+		capabilities.setVersion(context.getVersion());	
+		capabilities.setPlatform(context.getPlatform());
+		URL remoteAddress = context.getUrl();
 		WebDriver wd = new RemoteWebDriver(remoteAddress , capabilities);
 		data.put(TestContextDataKey.Driver.getValue(), wd);
 	}
@@ -350,10 +348,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		return null;
 	}
 	
-	public void initParam(String url,Sheet sheet){
-		this.url=url;
-		this.sheet=sheet;
-	}
+
 	
 	public String getId() {
 		// TODO Auto-generated method stub

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 15 17:37:29 CST 2016</td>
+<td>Started on:</td><td>Tue Jul 19 17:44:56 CST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (632 ms)</td>
+<tr><td>Total time:</td><td>102 seconds (102821 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,55 +75,77 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.execute()'><b>execute</b><br>Test class: topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest</td>
-<td><div><pre>java.lang.Error: Unresolved compilation problems: 
-	The import org.springframework cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	Service cannot be resolved to a type
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.execute(UserCaseExecute, AtUserCaseAction, List&lt;AtObjParams&gt;, Map&lt;String,Object&gt;, Log)
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.getActionDesc(List&lt;AtObjParams&gt;)
-	Name clash: The method getActionDesc(List&lt;AtObjParams&gt;) of type HttpGetAction has the same erasure as getActionDesc(List&lt;AtObjParams&gt;) of type UserCaseActionExecute but does not override it
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtUserCaseAction cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	The method getInitParamList() from the type BaseExecute refers to the missing type AtObjParams
-	The method createNewParam(String, String, String, String, String, String, String, String, String, String, String, String, int) from the type BaseExecute refers to the missing type AtObjParams
+<td title='topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest()'><b>executeTest</b><br>Test class: topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest</td>
+<td><div><pre>org.openqa.selenium.UnsupportedCommandException: &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Draft//EN&quot;&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Error 404--Not Found&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgcolor=&quot;white&quot;&gt;
+&lt;FONT FACE=Helvetica&gt;&lt;BR CLEAR=all&gt;
+&lt;TABLE border=0 cellspacing=5&gt;&lt;TR&gt;&lt;TD&gt;&lt;BR CLEAR=all&gt;
+&lt;FONT FACE=&quot;Helvetica&quot; COLOR=&quot;black&quot; SIZE=&quot;3&quot;&gt;&lt;H2&gt;Error 404--Not Found&lt;/H2&gt;
+&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;TABLE border=0 width=100% cellpadding=10&gt;&lt;TR&gt;&lt;TD VALIGN=top WIDTH=100% BGCOLOR=white&gt;&lt;FONT FACE=&quot;Courier New&quot;&gt;&lt;FONT FACE=&quot;Helvetica&quot; SIZE=&quot;3&quot;&gt;&lt;H3&gt;From RFC 2068 &lt;i&gt;Hypertext Transfer Protocol -- HTTP/1.1&lt;/i&gt;:&lt;/H3&gt;
+&lt;/FONT&gt;&lt;FONT FACE=&quot;Helvetica&quot; SIZE=&quot;3&quot;&gt;&lt;H4&gt;10.4.5 404 Not Found&lt;/H4&gt;
+&lt;/FONT&gt;&lt;P&gt;&lt;FONT FACE=&quot;Courier New&quot;&gt;The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.&lt;/p&gt;&lt;p&gt;If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.&lt;/FONT&gt;&lt;/P&gt;
+&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;
 
-	at topdeep.autotest.biz.executer.impl.browser.HttpGetAction.&lt;init&gt;(HttpGetAction.java:11)
-	at topdeep.autotest.entity.execute.UserCaseActionExecuteFactory.getUserCaseActionExcuter(UserCaseActionExecuteFactory.java:24)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.execute(BrowserUserCaseExecute.java:91)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.execute(BrowserUserCaseExecuteTest.java:68)
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+Command duration or timeout: 250 milliseconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;WIN-QFVULB7F2O7&apos;, ip: &apos;192.168.0.162&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.beforeExecute(BrowserUserCaseExecute.java:115)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest(BrowserUserCaseExecuteTest.java:72)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace4270031", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace4270031'><pre>java.lang.Error: Unresolved compilation problems: 
-	The import org.springframework cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	Service cannot be resolved to a type
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.execute(UserCaseExecute, AtUserCaseAction, List&lt;AtObjParams&gt;, Map&lt;String,Object&gt;, Log)
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.getActionDesc(List&lt;AtObjParams&gt;)
-	Name clash: The method getActionDesc(List&lt;AtObjParams&gt;) of type HttpGetAction has the same erasure as getActionDesc(List&lt;AtObjParams&gt;) of type UserCaseActionExecute but does not override it
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtUserCaseAction cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	The method getInitParamList() from the type BaseExecute refers to the missing type AtObjParams
-	The method createNewParam(String, String, String, String, String, String, String, String, String, String, String, String, int) from the type BaseExecute refers to the missing type AtObjParams
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace13545419", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace13545419'><pre>org.openqa.selenium.UnsupportedCommandException: &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Draft//EN&quot;&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Error 404--Not Found&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgcolor=&quot;white&quot;&gt;
+&lt;FONT FACE=Helvetica&gt;&lt;BR CLEAR=all&gt;
+&lt;TABLE border=0 cellspacing=5&gt;&lt;TR&gt;&lt;TD&gt;&lt;BR CLEAR=all&gt;
+&lt;FONT FACE=&quot;Helvetica&quot; COLOR=&quot;black&quot; SIZE=&quot;3&quot;&gt;&lt;H2&gt;Error 404--Not Found&lt;/H2&gt;
+&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;TABLE border=0 width=100% cellpadding=10&gt;&lt;TR&gt;&lt;TD VALIGN=top WIDTH=100% BGCOLOR=white&gt;&lt;FONT FACE=&quot;Courier New&quot;&gt;&lt;FONT FACE=&quot;Helvetica&quot; SIZE=&quot;3&quot;&gt;&lt;H3&gt;From RFC 2068 &lt;i&gt;Hypertext Transfer Protocol -- HTTP/1.1&lt;/i&gt;:&lt;/H3&gt;
+&lt;/FONT&gt;&lt;FONT FACE=&quot;Helvetica&quot; SIZE=&quot;3&quot;&gt;&lt;H4&gt;10.4.5 404 Not Found&lt;/H4&gt;
+&lt;/FONT&gt;&lt;P&gt;&lt;FONT FACE=&quot;Courier New&quot;&gt;The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.&lt;/p&gt;&lt;p&gt;If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.&lt;/FONT&gt;&lt;/P&gt;
+&lt;/FONT&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;
 
-	at topdeep.autotest.biz.executer.impl.browser.HttpGetAction.&lt;init&gt;(HttpGetAction.java:11)
-	at topdeep.autotest.entity.execute.UserCaseActionExecuteFactory.getUserCaseActionExcuter(UserCaseActionExecuteFactory.java:24)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.execute(BrowserUserCaseExecute.java:91)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.execute(BrowserUserCaseExecuteTest.java:68)
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+Command duration or timeout: 250 milliseconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;WIN-QFVULB7F2O7&apos;, ip: &apos;192.168.0.162&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.beforeExecute(BrowserUserCaseExecute.java:115)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest(BrowserUserCaseExecuteTest.java:72)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,8 +160,8 @@ function toggleAllBoxes() {
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
 </pre></div></td>
-<td>0</td>
-<td>topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@19c5ce6</td></tr>
+<td>102</td>
+<td>topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61</td></tr>
 </table><p>
 </body>
 </html>

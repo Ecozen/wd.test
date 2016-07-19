@@ -52,9 +52,9 @@ public class HttpGetAction  implements UserCaseActionExecute {
 			Log taskLog) throws Exception {
 		Map<String, AtObjParams> paramMap ;
 		BrowserUserCaseExecute execute = (BrowserUserCaseExecute) userCaseExecute;
-		if (paramMap.containsKey(PARAM_TARGET_URL) && data.containsKey(TestContextDataKey.Driver.getValue())) {
+		if (data.containsKey(TestContextDataKey.Driver.getValue())) {
 			WebDriver wd = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
-			String url = ;
+			String url = userCaseAction.getInputValue();
 			taskLog.debug("open url: " + url);
 			execute.httpGet(wd, url);
 			return TestResult.Success;

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="632" started-at="2016-07-15T09:37:29Z" finished-at="2016-07-15T09:37:30Z">
+  <suite name="Suite" duration-ms="102821" started-at="2016-07-19T09:44:56Z" finished-at="2016-07-19T09:46:39Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="632" started-at="2016-07-15T09:37:29Z" finished-at="2016-07-15T09:37:30Z">
+    <test name="Test" duration-ms="102821" started-at="2016-07-19T09:44:56Z" finished-at="2016-07-19T09:46:39Z">
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@19c5ce6]" name="beforeTest" is-config="true" duration-ms="543" started-at="2016-07-15T17:37:29Z" finished-at="2016-07-15T17:37:30Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="beforeTest" is-config="true" duration-ms="669" started-at="2016-07-19T17:44:56Z" finished-at="2016-07-19T17:44:57Z">
           <params>
             <param index="0">
               <value>
@@ -19,55 +19,78 @@
                 <![CDATA[C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[46.0.1]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="execute()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@19c5ce6]" name="execute" duration-ms="57" started-at="2016-07-15T17:37:30Z" finished-at="2016-07-15T17:37:30Z">
-          <exception class="java.lang.Error">
+        <test-method status="FAIL" signature="executeTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="executeTest" duration-ms="102088" started-at="2016-07-19T17:44:57Z" finished-at="2016-07-19T17:46:39Z">
+          <exception class="org.openqa.selenium.UnsupportedCommandException">
             <message>
-              <![CDATA[Unresolved compilation problems: 
-	The import org.springframework cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	Service cannot be resolved to a type
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.execute(UserCaseExecute, AtUserCaseAction, List<AtObjParams>, Map<String,Object>, Log)
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.getActionDesc(List<AtObjParams>)
-	Name clash: The method getActionDesc(List<AtObjParams>) of type HttpGetAction has the same erasure as getActionDesc(List<AtObjParams>) of type UserCaseActionExecute but does not override it
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtUserCaseAction cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	The method getInitParamList() from the type BaseExecute refers to the missing type AtObjParams
-	The method createNewParam(String, String, String, String, String, String, String, String, String, String, String, String, int) from the type BaseExecute refers to the missing type AtObjParams
-]]>
+              <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>Error 404--Not Found</TITLE>
+</HEAD>
+<BODY bgcolor="white">
+<FONT FACE=Helvetica><BR CLEAR=all>
+<TABLE border=0 cellspacing=5><TR><TD><BR CLEAR=all>
+<FONT FACE="Helvetica" COLOR="black" SIZE="3"><H2>Error 404--Not Found</H2>
+</FONT></TD></TR>
+</TABLE>
+<TABLE border=0 width=100% cellpadding=10><TR><TD VALIGN=top WIDTH=100% BGCOLOR=white><FONT FACE="Courier New"><FONT FACE="Helvetica" SIZE="3"><H3>From RFC 2068 <i>Hypertext Transfer Protocol -- HTTP/1.1</i>:</H3>
+</FONT><FONT FACE="Helvetica" SIZE="3"><H4>10.4.5 404 Not Found</H4>
+</FONT><P><FONT FACE="Courier New">The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.</p><p>If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.</FONT></P>
+</FONT></TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>
+Command duration or timeout: 250 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problems: 
-	The import org.springframework cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	The import topdeep.autotest.entity.db cannot be resolved
-	Service cannot be resolved to a type
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.execute(UserCaseExecute, AtUserCaseAction, List<AtObjParams>, Map<String,Object>, Log)
-	The type HttpGetAction must implement the inherited abstract method UserCaseActionExecute.getActionDesc(List<AtObjParams>)
-	Name clash: The method getActionDesc(List<AtObjParams>) of type HttpGetAction has the same erasure as getActionDesc(List<AtObjParams>) of type UserCaseActionExecute but does not override it
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtUserCaseAction cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	AtObjParams cannot be resolved to a type
-	The method getInitParamList() from the type BaseExecute refers to the missing type AtObjParams
-	The method createNewParam(String, String, String, String, String, String, String, String, String, String, String, String, int) from the type BaseExecute refers to the missing type AtObjParams
+              <![CDATA[org.openqa.selenium.UnsupportedCommandException: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>Error 404--Not Found</TITLE>
+</HEAD>
+<BODY bgcolor="white">
+<FONT FACE=Helvetica><BR CLEAR=all>
+<TABLE border=0 cellspacing=5><TR><TD><BR CLEAR=all>
+<FONT FACE="Helvetica" COLOR="black" SIZE="3"><H2>Error 404--Not Found</H2>
+</FONT></TD></TR>
+</TABLE>
+<TABLE border=0 width=100% cellpadding=10><TR><TD VALIGN=top WIDTH=100% BGCOLOR=white><FONT FACE="Courier New"><FONT FACE="Helvetica" SIZE="3"><H3>From RFC 2068 <i>Hypertext Transfer Protocol -- HTTP/1.1</i>:</H3>
+</FONT><FONT FACE="Helvetica" SIZE="3"><H4>10.4.5 404 Not Found</H4>
+</FONT><P><FONT FACE="Courier New">The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.</p><p>If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.</FONT></P>
+</FONT></TD></TR>
+</TABLE>
 
-	at topdeep.autotest.biz.executer.impl.browser.HttpGetAction.<init>(HttpGetAction.java:11)
-	at topdeep.autotest.entity.execute.UserCaseActionExecuteFactory.getUserCaseActionExcuter(UserCaseActionExecuteFactory.java:24)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.execute(BrowserUserCaseExecute.java:91)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.execute(BrowserUserCaseExecuteTest.java:68)
+</BODY>
+</HTML>
+Command duration or timeout: 250 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:158)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.beforeExecute(BrowserUserCaseExecute.java:115)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest(BrowserUserCaseExecuteTest.java:72)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -83,11 +106,11 @@
 	at java.lang.Thread.run(Thread.java:745)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+          </exception> <!-- org.openqa.selenium.UnsupportedCommandException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- execute -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@19c5ce6]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-07-15T17:37:30Z" finished-at="2016-07-15T17:37:30Z">
+        </test-method> <!-- executeTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-07-19T17:46:39Z" finished-at="2016-07-19T17:46:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

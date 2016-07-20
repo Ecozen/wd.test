@@ -175,7 +175,7 @@ public class EnumType {
 		}
 	}
 	
-	public enum ElementLocateType{
+	public enum LocateType{
 		Id("id选择器","1"),
 		CssSelector("css选择器","2"),
 		ClassName("classname选择器","3");
@@ -192,7 +192,7 @@ public class EnumType {
 			return this.value;
 		}
 
-		private ElementLocateType(String name, String value) {
+		private LocateType(String name, String value) {
 			this.name = name;
 			this.value = value;
 		}
@@ -216,6 +216,33 @@ public class EnumType {
 		}
 
 		private BrowserType(String name, String value) {
+			this.name = name;
+			this.value = value;
+		}
+	}
+	
+	public enum ActionType{
+		INPUT_TEXT("文本输入","1"),
+		CLICK("点击操作","2"),
+		WAIT_ELEMENT("等待元素","3"),
+		WAIT_TIME("等待时间","4"),
+		HTTP_GET("打开网页","5"),
+		CHECK_VALUE("元素文本检查","6"),
+		CHECK_TITLE("页面标题检查","7");
+		
+		private String name;
+
+		public String getName() {
+			return this.name;
+		}
+
+		private String value;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		private ActionType(String name, String value) {
 			this.name = name;
 			this.value = value;
 		}

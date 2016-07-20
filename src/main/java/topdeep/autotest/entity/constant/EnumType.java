@@ -200,8 +200,8 @@ public class EnumType {
 	
 	public enum BrowserType{
 		Firefox("火狐","1"),
-		IE("IE","1"),
-		Chrome("谷歌","1");
+		Chrome("谷歌","2"),
+		IE("IE","3");
 		
 		private String name;
 

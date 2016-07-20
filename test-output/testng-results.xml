@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="102821" started-at="2016-07-19T09:44:56Z" finished-at="2016-07-19T09:46:39Z">
+  <suite name="Suite" duration-ms="9420" started-at="2016-07-20T07:28:48Z" finished-at="2016-07-20T07:28:58Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="102821" started-at="2016-07-19T09:44:56Z" finished-at="2016-07-19T09:46:39Z">
+    <test name="Test" duration-ms="9420" started-at="2016-07-20T07:28:48Z" finished-at="2016-07-20T07:28:58Z">
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="beforeTest" is-config="true" duration-ms="669" started-at="2016-07-19T17:44:56Z" finished-at="2016-07-19T17:44:57Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1cad977]" name="beforeTest" is-config="true" duration-ms="418" started-at="2016-07-20T15:28:48Z" finished-at="2016-07-20T15:28:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[http://192.168.0.104:8090]]>
+                <![CDATA[http://192.168.0.162:4444/wd/hub]]>
               </value>
             </param>
             <param index="1">
@@ -28,57 +28,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="executeTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="executeTest" duration-ms="102088" started-at="2016-07-19T17:44:57Z" finished-at="2016-07-19T17:46:39Z">
-          <exception class="org.openqa.selenium.UnsupportedCommandException">
+        <test-method status="FAIL" signature="executeTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1cad977]" name="executeTest" duration-ms="8952" started-at="2016-07-20T15:28:49Z" finished-at="2016-07-20T15:28:58Z">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Draft//EN">
-<HTML>
-<HEAD>
-<TITLE>Error 404--Not Found</TITLE>
-</HEAD>
-<BODY bgcolor="white">
-<FONT FACE=Helvetica><BR CLEAR=all>
-<TABLE border=0 cellspacing=5><TR><TD><BR CLEAR=all>
-<FONT FACE="Helvetica" COLOR="black" SIZE="3"><H2>Error 404--Not Found</H2>
-</FONT></TD></TR>
-</TABLE>
-<TABLE border=0 width=100% cellpadding=10><TR><TD VALIGN=top WIDTH=100% BGCOLOR=white><FONT FACE="Courier New"><FONT FACE="Helvetica" SIZE="3"><H3>From RFC 2068 <i>Hypertext Transfer Protocol -- HTTP/1.1</i>:</H3>
-</FONT><FONT FACE="Helvetica" SIZE="3"><H4>10.4.5 404 Not Found</H4>
-</FONT><P><FONT FACE="Courier New">The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.</p><p>If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.</FONT></P>
-</FONT></TD></TR>
-</TABLE>
-
-</BODY>
-</HTML>
-Command duration or timeout: 250 milliseconds
+              <![CDATA[Target URL /fund-trade/t/openAccount.action is not well-formed.
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: unknown
+Command duration or timeout: 1.58 seconds
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
 System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver]]>
+Session ID: 546796d8-90d1-4a3a-8672-39fa88b5024e
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, acceptSslCerts=true, browserName=firefox, rotatable=false, locationContextEnabled=true, webdriver.remote.sessionid=546796d8-90d1-4a3a-8672-39fa88b5024e, version=46.0.1, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, webStorageEnabled=true, nativeEvents=false, applicationCacheEnabled=true, takesScreenshot=true}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnsupportedCommandException: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Draft//EN">
-<HTML>
-<HEAD>
-<TITLE>Error 404--Not Found</TITLE>
-</HEAD>
-<BODY bgcolor="white">
-<FONT FACE=Helvetica><BR CLEAR=all>
-<TABLE border=0 cellspacing=5><TR><TD><BR CLEAR=all>
-<FONT FACE="Helvetica" COLOR="black" SIZE="3"><H2>Error 404--Not Found</H2>
-</FONT></TD></TR>
-</TABLE>
-<TABLE border=0 width=100% cellpadding=10><TR><TD VALIGN=top WIDTH=100% BGCOLOR=white><FONT FACE="Courier New"><FONT FACE="Helvetica" SIZE="3"><H3>From RFC 2068 <i>Hypertext Transfer Protocol -- HTTP/1.1</i>:</H3>
-</FONT><FONT FACE="Helvetica" SIZE="3"><H4>10.4.5 404 Not Found</H4>
-</FONT><P><FONT FACE="Courier New">The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.</p><p>If the server does not wish to make this information available to the client, the status code 403 (Forbidden) can be used instead. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address.</FONT></P>
-</FONT></TD></TR>
-</TABLE>
-
-</BODY>
-</HTML>
-Command duration or timeout: 250 milliseconds
+              <![CDATA[org.openqa.selenium.WebDriverException: Target URL /fund-trade/t/openAccount.action is not well-formed.
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: unknown
+Command duration or timeout: 1.58 seconds
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
 System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
+Session ID: 546796d8-90d1-4a3a-8672-39fa88b5024e
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, acceptSslCerts=true, browserName=firefox, rotatable=false, locationContextEnabled=true, webdriver.remote.sessionid=546796d8-90d1-4a3a-8672-39fa88b5024e, version=46.0.1, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, webStorageEnabled=true, nativeEvents=false, applicationCacheEnabled=true, takesScreenshot=true}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -86,11 +60,11 @@ Driver info: org.openqa.selenium.remote.RemoteWebDriver
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:158)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.beforeExecute(BrowserUserCaseExecute.java:115)
-	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest(BrowserUserCaseExecuteTest.java:72)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.httpGet(BrowserUserCaseExecute.java:132)
+	at topdeep.autotest.biz.executer.impl.browser.HttpGetAction.execute(HttpGetAction.java:59)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecute.execute(BrowserUserCaseExecute.java:90)
+	at topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest.executeTest(BrowserUserCaseExecuteTest.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -104,13 +78,30 @@ Driver info: org.openqa.selenium.remote.RemoteWebDriver
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)
+	... 19 more
+Caused by: org.openqa.selenium.WebDriverException: Target URL /fund-trade/t/openAccount.action is not well-formed.
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: unknown
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'WIN-QFVULB7F2O7', ip: '192.168.0.162', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.get(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4031553610696707213webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10636)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4031553610696707213webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4031553610696707213webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous4031553610696707213webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnsupportedCommandException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- executeTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@572b61]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-07-19T17:46:39Z" finished-at="2016-07-19T17:46:39Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1cad977]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-07-20T15:28:58Z" finished-at="2016-07-20T15:28:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

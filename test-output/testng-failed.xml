@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
   <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls"/>
-  <parameter name="url" value="http://192.168.0.104:8090"/>
+  <parameter name="url" value="http://192.168.0.162:4444/wd/hub"/>
   <parameter name="version" value="46.0.1"/>
   <test name="Test(failed)" parallel="classes">
     <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls"/>
-    <parameter name="url" value="http://192.168.0.104:8090"/>
+    <parameter name="url" value="http://192.168.0.162:4444/wd/hub"/>
     <parameter name="version" value="46.0.1"/>
     <classes>
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">

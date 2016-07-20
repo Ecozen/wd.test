@@ -55,7 +55,7 @@ public class HttpGetAction  implements UserCaseActionExecute {
 		if (data.containsKey(TestContextDataKey.Driver.getValue())) {
 			WebDriver wd = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
 			String url = userCaseAction.getInputValue();
-			taskLog.debug("open url: " + url);
+//			taskLog.debug("open url: " + url);
 			execute.httpGet(wd, url);
 			return TestResult.Success;
 		}

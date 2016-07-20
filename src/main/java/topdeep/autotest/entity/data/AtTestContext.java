@@ -1,33 +1,33 @@
 package topdeep.autotest.entity.data;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.openqa.selenium.Platform;
+
+import topdeep.autotest.entity.constant.EnumType.BrowserType;
 
 public class AtTestContext {
 	
-	private URL url;
-	private String version;
+
 	private Platform platform;
-	public URL createUrl(String url) throws MalformedURLException{
-		this.url=new URL(url);
-		return this.url;
-	}
-	public String getVersion() {
-		return null;
-	}
-	public void setVersion(String version) {
-		this.version = version;
-	}
+	private String host;
+	private String ip;
+	private String port;
+	private String protocol;
 	
-	public URL getUrl() {
-		return url;
-	}
-	public void setUrl(URL url) {
-		this.url = url;
-	}
+
+
 	
+
+	
+	public AtTestContext(Platform platform, String host, String ip, String port, String protocol) {
+		super();
+		this.platform = platform;
+		this.host = host;
+		this.ip = ip;
+		this.port = port;
+		this.protocol = protocol;
+		BrowserType.valueOf("1");
+		
+	}
 	public Platform getPlatform() {
 		return this.platform;
 	}

@@ -4,7 +4,7 @@
   <test name="Test">
   
   <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls" />
-  <parameter name="url" value="http://192.168.0.104:8090" />
+  <parameter name="url" value="http://192.168.0.162:4444/wd/hub" />
   <parameter name="version" value="46.0.1" />
   
   <classes>

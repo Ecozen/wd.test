@@ -1,7 +1,5 @@
 package topdeep.autotest.entity.data;
 
-import java.util.List;
-
 import topdeep.autotest.entity.constant.EnumType.ActionType;
 import topdeep.autotest.entity.constant.EnumType.CheckType;
 import topdeep.autotest.entity.constant.EnumType.LocateType;
@@ -25,18 +23,18 @@ public class AtUserCaseAction {
     
     private String locateParam;
     
-    private List<String> inputValue;
+    private String inputValue;
     
     private CheckType checkType;
     
-    private List<String> checkValue;
+    private String checkValue;
     
     private boolean screenShotFlag;
 
     private String time;
 
 		public AtUserCaseAction( String actionExecuteId,ActionType actionType, String actionDesc, LocateType locateTpye,String locateParam,
-	    		List<String> inputValue,CheckType checkType,List<String> checkValue, boolean screenShotFlag,String time) {
+	    		String inputValue,CheckType checkType,String checkValue, boolean screenShotFlag,String time) {
 	        this.actionExecuteId = actionExecuteId;
 	        this.actionType = actionType;
 	        this.actionDesc = actionDesc;
@@ -136,12 +134,12 @@ public class AtUserCaseAction {
 		}
 
 
-		public List<String> getInputValue() {
+		public String getInputValue() {
 			return inputValue;
 		}
 
 
-		public void setInputValue(List<String> inputValue) {
+		public void setInputValue(String inputValue) {
 			this.inputValue = inputValue;
 		}
 
@@ -156,12 +154,12 @@ public class AtUserCaseAction {
 		}
 
 
-		public List<String> getCheckValue() {
+		public String getCheckValue() {
 			return checkValue;
 		}
 
 
-		public void setCheckValue(List<String> checkValue) {
+		public void setCheckValue(String checkValue) {
 			this.checkValue = checkValue;
 		}
 

@@ -248,4 +248,55 @@ public class EnumType {
 		}
 	}
 
+	public enum HeaderType{
+		ACTION_EXCUTE_ID("序号","0"),
+		ACTION_DESC("步骤说明","1"),
+		ACTION_TYPE("动作类型","2"),
+		LOCATE_TYPE("定位方式","3"),
+		LOCATE_PARAM("定位参数","4"),
+		INPUT_VALUE("输入值","5"),
+		CHECK_TYPE("检查类型","6"),
+		CHECK_VALUE("检查值","7"),
+		TIME("时间","8"),
+		SCREEN_SHOT_FLAG("截图标志","9");
+		private String name;
+
+		public String getName() {
+			return this.name;
+		}
+
+		private String value;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		private HeaderType(String name, String value) {
+			this.name = name;
+			this.value = value;
+		}
+	}
+	
+	public enum ScreenShotFlag{
+		FORBIDDEN("禁止截屏","0"),
+		BEFORE("动作前截屏","1"),
+		AFTER("动作后截屏","2"),
+		BEFORE_AND_AFTER("动作前后截屏","3");
+		private String name;
+
+		public String getName() {
+			return this.name;
+		}
+
+		private String value;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		private ScreenShotFlag(String name, String value) {
+			this.name = name;
+			this.value = value;
+		}
+	}
 }

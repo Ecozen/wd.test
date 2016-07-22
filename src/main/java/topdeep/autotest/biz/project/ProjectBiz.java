@@ -277,7 +277,7 @@ public class ProjectBiz extends BaseBiz {
 		newAction.setActionDesc(srcUserCaseAction.getActionDesc());
 		newAction.setActionExecuteId(srcUserCaseAction.getActionExecuteId());
 		newAction.setActionMemo(srcUserCaseAction.getActionMemo());
-		newAction.setActionName(srcUserCaseAction.getActionName());
+		newAction.setActionName(srcUserCaseAction.getActionType());
 		newAction.setAuditState("1");
 		newAction.setCreateId(webUserRuntimeBiz.getLoginUserId());
 		newAction.setCreateName(webUserRuntimeBiz.getLoginUserName());

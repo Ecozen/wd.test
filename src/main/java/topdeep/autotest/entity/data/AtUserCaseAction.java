@@ -3,6 +3,7 @@ package topdeep.autotest.entity.data;
 import topdeep.autotest.entity.constant.EnumType.ActionType;
 import topdeep.autotest.entity.constant.EnumType.CheckType;
 import topdeep.autotest.entity.constant.EnumType.LocateType;
+import topdeep.autotest.entity.constant.EnumType.ScreenShotFlag;
 
 public class AtUserCaseAction {
 
@@ -29,16 +30,16 @@ public class AtUserCaseAction {
     
     private String checkValue;
     
-    private boolean screenShotFlag;
+    private ScreenShotFlag flag;
 
     private String time;
 
 		public AtUserCaseAction( String actionExecuteId,ActionType actionType, String actionDesc, LocateType locateTpye,String locateParam,
-	    		String inputValue,CheckType checkType,String checkValue, boolean screenShotFlag,String time) {
+	    		String inputValue,CheckType checkType,String checkValue, ScreenShotFlag screenShotFlag,String time) {
 	        this.actionExecuteId = actionExecuteId;
 	        this.actionType = actionType;
 	        this.actionDesc = actionDesc;
-	        this.screenShotFlag = screenShotFlag;
+	        this.flag = screenShotFlag;
 	        this.locateType =locateTpye;
 	        this.locateParam=locateParam;
 	        this.inputValue=inputValue;
@@ -76,12 +77,12 @@ public class AtUserCaseAction {
 	        this.actionExecuteId = actionExecuteId == null ? null : actionExecuteId.trim();
 	    }
 
-	    public ActionType getActionName() {
+	    public ActionType getActionType() {
 	        return actionType;
 	    }
 
-	    public void setActionName(ActionType actionName) {
-	        this.actionType = actionName;
+	    public void setActionType(ActionType actionType) {
+	        this.actionType = actionType;
 	    }
 
 
@@ -105,12 +106,12 @@ public class AtUserCaseAction {
 	    }
 
 	
-	    public boolean getScreenShotFlag() {
-	        return screenShotFlag;
+	    public ScreenShotFlag getScreenShotFlag() {
+	        return flag;
 	    }
 
-	    public void setScreenShotFlag(boolean screenShotFlag) {
-	        this.screenShotFlag = screenShotFlag;
+	    public void setScreenShotFlag(ScreenShotFlag screenShotFlag) {
+	        this.flag = screenShotFlag;
 	    }
 
 
@@ -119,7 +120,7 @@ public class AtUserCaseAction {
 		}
 
 
-		public void setLocateTpye(LocateType locateType) {
+		public void setLocateType(LocateType locateType) {
 			this.locateType = locateType;
 		}
 

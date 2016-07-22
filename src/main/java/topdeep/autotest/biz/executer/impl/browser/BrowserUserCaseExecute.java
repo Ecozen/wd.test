@@ -86,7 +86,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		TestResult userCaseResult = TestResult.Success;
 		
 		for (AtUserCaseAction item : actionList) {
-			UserCaseActionExecute actionExecute = UserCaseActionExecuteFactory.getUserCaseActionExcuter(item.getActionName());
+			UserCaseActionExecute actionExecute = UserCaseActionExecuteFactory.getUserCaseActionExcuter(item.getActionType());
 			TestResult result = actionExecute.execute(this, item, paramList, data, taskLog);
 			
 			if (result != TestResult.Success) {

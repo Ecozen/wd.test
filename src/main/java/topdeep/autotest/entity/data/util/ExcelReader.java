@@ -63,8 +63,8 @@ public class ExcelReader {
 	}
 	
 	
-	private List<?> getRowValue(Sheet sheet ,int rownum){
-		List<?> rowValue = new ArrayList<Object>();
+	private List<? extends Object> getRowValue(Sheet sheet ,int rownum){
+		List<?extends Object> rowValue;
 		if(rownum==0){
 		rowValue = getHead(sheet,1);
 		}else if(rownum>0){

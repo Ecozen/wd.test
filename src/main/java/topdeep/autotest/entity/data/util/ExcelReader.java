@@ -63,14 +63,27 @@ public class ExcelReader {
 	}
 	
 	
-	private List<String> getRowValue(Sheet sheet ,int rownum){
-		List<String> rowValue = new ArrayList<String>();
-		Row row = sheet.getRow(rownum ); 
-		for (Cell cell : row) {
-			rowValue.add(getSheetCellValue(cell));
+	private List<?> getRowValue(Sheet sheet ,int rownum){
+		List<?> rowValue = new ArrayList<Object>();
+		if(rownum==0){
+		rowValue = getHead(sheet,1);
+		}else if(rownum>0){
+			Row row = sheet.getRow(rownum);
+			for (Cell cell : row) {
+				rowValue.add(getCellValue(cell));
+			}
 		}
 		return rowValue;
 	}
+	
+	private Object getCellValue(Cell cell){
+		Object value = null;
+		if (cell.getCellStyle() != null) {
+			
+		}
+		return null;
+	}
+	
 	
 	 private String getSheetCellValue(Cell cell) {
 		String value = "";

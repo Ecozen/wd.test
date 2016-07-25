@@ -34,7 +34,7 @@ public class AtUserCaseAction {
 
     private String time;
 
-		public AtUserCaseAction( String actionExecuteId,ActionType actionType, String actionDesc, LocateType locateTpye,String locateParam,
+	public AtUserCaseAction( String actionExecuteId,ActionType actionType, String actionDesc, LocateType locateTpye,String locateParam,
 	    		String inputValue,CheckType checkType,String checkValue, ScreenShotFlag screenShotFlag,String time) {
 	        this.actionExecuteId = actionExecuteId;
 	        this.actionType = actionType;

@@ -5,15 +5,11 @@ package topdeep.autotest.entity.execute;
 
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-
 import topdeep.autotest.entity.constant.EnumType.TestResult;
-import topdeep.autotest.entity.data.AtTestCase;
+import topdeep.autotest.entity.data.AtUserCase;
 import topdeep.autotest.entity.data.AtTestContext;
-import topdeep.autotest.entity.data.AtTestDataGroup;
 import topdeep.autotest.entity.data.AtTestResult;
 import topdeep.autotest.entity.data.AtTestResultUserCase;
-import topdeep.autotest.entity.data.AtUserCase;
 
 
 /**
@@ -21,10 +17,10 @@ import topdeep.autotest.entity.data.AtUserCase;
  *
  */
 public interface UserCaseExecute extends BaseExecute {
-	void beforeExecute(AtTestCase userCase, AtTestContext context, Map<String, Object> data, Log taskLog) throws Exception;
+	void beforeExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) throws Exception;
 
-	TestResult execute(AtTestCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
-			AtTestDataGroup testDataGroup, Map<String, Object> data, Log taskLog) throws Exception;
+	TestResult execute(AtUserCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
+			Map<String, Object> data) throws Exception;
 
-	void afterExecute(AtTestCase userCase, AtTestContext context, Map<String, Object> data, Log taskLog);
+	void afterExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data);
 }

@@ -36,6 +36,6 @@ public interface UserCaseActionExecute extends BaseExecute {
 	 * @return
 	 * @throws Exception
 	 */
-	TestResult execute(UserCaseExecute userCaseExecute, AtUserCaseAction userCaseAction, List<AtObjParams> paramList, Map<String, Object> data, Log taskLog)
+	TestResult execute(UserCaseExecute userCaseExecute, AtUserCaseAction userCaseAction, List<AtObjParams> paramList,Map<String, Object> data)
 			throws Exception;
 }

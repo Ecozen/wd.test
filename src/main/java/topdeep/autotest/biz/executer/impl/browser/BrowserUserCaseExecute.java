@@ -6,15 +6,12 @@ package topdeep.autotest.biz.executer.impl.browser;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.omg.PortableInterceptor.USER_EXCEPTION;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,32 +19,26 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.CommandExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import topdeep.autotest.biz.executer.impl.BaseExecute;
-import topdeep.autotest.entity.constant.EnumType.ObjType;
+
+import topdeep.autotest.entity.constant.EnumType.BrowserType;
 import topdeep.autotest.entity.constant.EnumType.TestContextDataKey;
 import topdeep.autotest.entity.constant.EnumType.TestContextParamKey;
 import topdeep.autotest.entity.constant.EnumType.TestResult;
 import topdeep.autotest.entity.data.AtObjParams;
-import topdeep.autotest.entity.data.AtTestCase;
+import topdeep.autotest.entity.data.AtUserCase;
 import topdeep.autotest.entity.data.AtTestContext;
 import topdeep.autotest.entity.data.AtTestData;
 import topdeep.autotest.entity.data.AtTestDataGroup;
 import topdeep.autotest.entity.data.AtTestResult;
 import topdeep.autotest.entity.data.AtTestResultUserCase;
-import topdeep.autotest.entity.data.AtUserCase;
 import topdeep.autotest.entity.data.AtUserCaseAction;
-import topdeep.autotest.entity.data.util.ExcelDataProvider;
-import topdeep.autotest.entity.execute.ObjRegisterAttribute;
 import topdeep.autotest.entity.execute.UserCaseActionExecute;
 import topdeep.autotest.entity.execute.UserCaseActionExecuteFactory;
 import topdeep.autotest.entity.execute.UserCaseExecute;
-import topdeep.autotest.entity.params.ApplicationParam;
-import topdeep.autotest.util.SequenceUtil;
 
 /**
  * @author niexin
@@ -64,8 +55,8 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 	 * 
 	 * @see topdeep.autotest.entity.execute.UserCaseExecute#execute(topdeep.autotest.entity.db.AtTestUserCase)
 	 */
-	public TestResult execute(AtTestCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
-			AtTestDataGroup testDataGroup, Map<String, Object> data, Log taskLog) throws Exception {
+	public TestResult execute(AtUserCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
+			 Map<String, Object> data) throws Exception {
 		List<AtTestData> dataList = null;
 		
 		dataList = new ArrayList<AtTestData>();
@@ -79,7 +70,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 			}
 		}
 		
-		List<AtUserCaseAction> actionList = userCase.getActionlist();
+		List<AtUserCaseAction> actionList = userCase.getUserCase();
 		WebDriver webDriver = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
 		
 		int actionNo = 1;
@@ -87,7 +78,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		
 		for (AtUserCaseAction item : actionList) {
 			UserCaseActionExecute actionExecute = UserCaseActionExecuteFactory.getUserCaseActionExcuter(item.getActionType());
-			TestResult result = actionExecute.execute(this, item, paramList, data, taskLog);
+			TestResult result = actionExecute.execute(this, item, paramList,data);
 			
 			if (result != TestResult.Success) {
 				userCaseResult = result;
@@ -106,14 +97,21 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 	 * 
 	 * @see topdeep.autotest.entity.execute.UserCaseExecute#beforeExecute(topdeep.autotest.entity.db.AtUserCase)
 	 */
-	public void beforeExecute(AtTestCase userCase, AtTestContext context, Map<String, Object> data, Log taskLog) throws Exception {
+	public void beforeExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) throws Exception {
 		DesiredCapabilities capabilities = null;
-		capabilities = DesiredCapabilities.firefox();
-		capabilities.setVersion(context.getVersion());	
-		capabilities.setPlatform(context.getPlatform());
-		URL remoteAddress = context.getUrl();
+		if (context.getBrowser().equals(BrowserType.IE)) {
+			capabilities = DesiredCapabilities.internetExplorer();
+		}else if(context.getBrowser().equals(BrowserType.Chrome)){
+			capabilities = DesiredCapabilities.chrome();
+		}else{
+			capabilities = DesiredCapabilities.firefox();
+		}
+		String url = context.getProtocol()+"://"+context.getHost()+":"+context.getPort()+"/wd/hub";
+		URL remoteAddress = new URL(url) ;
+		data.put(TestContextParamKey.ServeUrl.getValue(), url);
 		WebDriver wd = new RemoteWebDriver(remoteAddress , capabilities);
 		data.put(TestContextDataKey.Driver.getValue(), wd);
+		
 	}
 
 	/*
@@ -121,9 +119,10 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 	 * 
 	 * @see topdeep.autotest.entity.execute.UserCaseExecute#afterExecute(topdeep.autotest.entity.db.AtUserCase)
 	 */
-	public void afterExecute(AtTestCase userCase, AtTestContext context, Map<String, Object> data, Log taskLog) {
-		if (data.containsKey(TestContextDataKey.Driver.getValue())) {
-			WebDriver wd = (WebDriver) data.get(TestContextDataKey.Driver.getValue());
+	public void afterExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) {
+		String key = TestContextDataKey.Driver.getValue();
+		if (data.containsKey(key)) {
+			WebDriver wd = (WebDriver) data.get(key);
 			wd.quit();
 		}
 	}

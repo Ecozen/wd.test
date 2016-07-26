@@ -2,12 +2,12 @@ package topdeep.autotest.biz.executer.impl.browser;
 
 import org.testng.annotations.Test;
 
-import topdeep.autotest.entity.data.AtTestCase;
+import topdeep.autotest.entity.constant.EnumType.BrowserType;
 import topdeep.autotest.entity.data.AtTestContext;
-import topdeep.autotest.entity.data.AtTestDataGroup;
 import topdeep.autotest.entity.data.AtTestResult;
 import topdeep.autotest.entity.data.AtTestResultUserCase;
-import topdeep.autotest.entity.data.util.ExcelDataProvider;
+import topdeep.autotest.entity.data.AtUserCase;
+import topdeep.autotest.entity.data.util.ExcelReader;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -19,7 +19,6 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -34,25 +33,35 @@ Workbook wb = null;
 Sheet actionSheet = null; 
 AtTestContext context = new AtTestContext();
 Map<String, Object> data = new HashMap<String, Object>();
-  @BeforeTest
-  @Parameters({"url","workBook","version"})
-  public void beforeTest(String url,String path,String version) throws MalformedURLException {
-      filePath = path;
-      try {
-      	if (filePath.endsWith("xlsx")) {
+ExcelReader reader = new ExcelReader();
+AtUserCase userCase;
+private void getWorkBook(){
+    try {
+      	if (filePath.endsWith("xlsx")){
       		wb = new XSSFWorkbook(new FileInputStream(filePath));
 			}else if(filePath.endsWith("xls")){
-				wb = new HSSFWorkbook(new FileInputStream(filePath));
+			wb = new HSSFWorkbook(new FileInputStream(filePath));
 			}
-      } catch (FileNotFoundException e) {
+      } catch (FileNotFoundException e){
           e.printStackTrace();
       } catch (IOException e) {
           e.printStackTrace();
-      }
-      actionSheet = wb.getSheet("Lionfund_openAccount_action");
-	  context.setVersion(version);
-	  context.createUrl(url);
+      }		
+}
+
+  @BeforeTest
+  @Parameters({"sheetName","workBook"})
+  public void beforeTest(String sheetName,String path) throws MalformedURLException {
+      filePath = path;
+      getWorkBook();
+      
 	  context.setPlatform();
+	  context.setBrowser(BrowserType.Firefox);
+	  context.setProtocol("http");
+	  context.setHost("192.168.0.104");
+	  context.setPort("4444");
+	  
+	  userCase = reader.getUserCace(sheetName, wb);
   }
   @AfterTest
   public void afterTest() {
@@ -62,15 +71,11 @@ Map<String, Object> data = new HashMap<String, Object>();
 
   @Test
   public void executeTest() throws Exception {
-	AtTestCase userCase = new ExcelDataProvider(actionSheet , true, true, 0).getdata();
-	
 	AtTestResult testResult = null;
 	AtTestResultUserCase testResultUserCase = null;
-	AtTestDataGroup testDataGroup = null;
-	Log taskLog = null;
 
-	executer.beforeExecute(userCase, context, data, taskLog);
-	executer.execute(userCase, context, testResult, testResultUserCase, testDataGroup, data, taskLog);
-	executer.afterExecute(userCase, context, data, taskLog);
+	executer.beforeExecute(userCase, context, data);
+	executer.execute(userCase, context, testResult, testResultUserCase, data);
+	executer.afterExecute(userCase, context, data);
   }
 }

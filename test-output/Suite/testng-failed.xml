@@ -2,17 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
   <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls"/>
-  <parameter name="url" value="http://192.168.0.162:4444/wd/hub"/>
-  <parameter name="version" value="46.0.1"/>
+  <parameter name="sheetName" value="Lionfund_openAccount_action"/>
   <test name="Test(failed)" parallel="classes">
     <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_openAccount_action.xls"/>
-    <parameter name="url" value="http://192.168.0.162:4444/wd/hub"/>
-    <parameter name="version" value="46.0.1"/>
+    <parameter name="sheetName" value="Lionfund_openAccount_action"/>
     <classes>
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">
         <methods>
           <include name="beforeTest"/>
-          <include name="afterTest"/>
           <include name="executeTest"/>
         </methods>
       </class> <!-- topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest -->

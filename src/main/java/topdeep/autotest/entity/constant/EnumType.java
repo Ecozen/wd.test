@@ -222,13 +222,13 @@ public class EnumType {
 	}
 	
 	public enum ActionType{
-		INPUT_TEXT("文本输入","1"),
-		CLICK("点击操作","2"),
-		WAIT_ELEMENT("等待元素","3"),
-		WAIT_TIME("等待时间","4"),
-		HTTP_GET("打开网页","5"),
-		CHECK_VALUE("元素文本检查","6"),
-		CHECK_TITLE("页面标题检查","7");
+		INPUT_TEXT("文本输入","0"),
+		CLICK("点击操作","1"),
+		WAIT_ELEMENT("等待元素","2"),
+		WAIT_TIME("等待时间","3"),
+		HTTP_GET("打开网页","4"),
+		CHECK_VALUE("元素文本检查","5"),
+		CHECK_TITLE("页面标题检查","6");
 		
 		private String name;
 

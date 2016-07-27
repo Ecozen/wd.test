@@ -8,8 +8,6 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.tools.ant.types.resources.selectors.Compare;
-
 import topdeep.autotest.entity.constant.EnumType.ActionType;
 import topdeep.autotest.entity.constant.EnumType.CheckType;
 import topdeep.autotest.entity.constant.EnumType.HeaderType;
@@ -21,7 +19,7 @@ import topdeep.autotest.entity.data.AtUserCaseAction;
 public class ExcelReader {
 	private List<HeaderType> headers = new ArrayList<HeaderType>();
 	
-	public AtUserCaseAction getAction(String sheetName,Workbook wb,int rownum){
+	public AtUserCaseAction getAction(String sheetName,Workbook wb,int rownum,String userCaseId){
 		Sheet sheet = wb.getSheet(sheetName);
 		Map<HeaderType,String> action = new HashMap<HeaderType, String>();
 		List<String> rowValue = new ArrayList<String>();
@@ -34,17 +32,19 @@ public class ExcelReader {
 				col++;
 			}
 			userCaseAction = convertAction(action);
+			userCaseAction.setUserCaseId(userCaseId);
 		}
 		return userCaseAction;
 	}
 	
-	public AtUserCase getUserCace(String sheetName,Workbook wb){
+	public AtUserCase getUserCace(String sheetName,Workbook wb,String userCaseId){
 		Sheet sheet = wb.getSheet(sheetName);
 		int rownum = sheet.getLastRowNum();
 		headers = getHead(sheet, 0);
 		AtUserCase userCase = new AtUserCase();
+		userCase.setUserCaseId(userCaseId);
 		for (int i = 1; i <=rownum; i++) {
-			AtUserCaseAction action = getAction(sheetName, wb,i);
+			AtUserCaseAction action = getAction(sheetName, wb,i,userCaseId);
 			userCase.add(action);
 		}
 		return userCase;

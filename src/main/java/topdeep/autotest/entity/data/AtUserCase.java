@@ -42,7 +42,7 @@ public class AtUserCase {
 		Sheet sheet = wb.getSheet(sheetName);
 		int rownum = sheet.getLastRowNum();
 		for (int i = 0; i < rownum; i++) {
-			AtUserCaseAction action =reader.getAction(sheetName, wb, i);
+			AtUserCaseAction action =reader.getAction(sheetName, wb, i,userCaseId);
 			add(action);
 		}
 		return userCase;

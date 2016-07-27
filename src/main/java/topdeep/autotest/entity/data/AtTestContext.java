@@ -12,17 +12,18 @@ public class AtTestContext {
 	private String port;
 	private String protocol;
 	private BrowserType browser;
-	
+	private String serviceUrl;
 
 	
-	public AtTestContext(Platform platform, String host, String ip, String port, String protocol,BrowserType browser) {
+	public AtTestContext(Platform platform, String host, String ip, String port, String protocol,BrowserType browser,String serviceUrl) {
 		super();
 		this.platform = platform;
 		this.host = host;
 		this.ip = ip;
 		this.port = port;
 		this.protocol = protocol;
-		this.browser = browser;		
+		this.browser = browser;
+		this.serviceUrl = serviceUrl;
 	}
 	public AtTestContext(){
 		
@@ -66,6 +67,12 @@ public class AtTestContext {
 	}
 	public void setPlatform(Platform platform) {
 		this.platform = platform;
+	}
+	public String getServiceUrl() {
+		return this.serviceUrl;
+	}
+	public void setServiceUrl(String serviceUrl) {
+		this.serviceUrl = serviceUrl;
 	}
 
 	

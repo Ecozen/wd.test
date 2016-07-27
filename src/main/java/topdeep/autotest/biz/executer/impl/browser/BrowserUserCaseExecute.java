@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import topdeep.autotest.entity.constant.EnumType.BrowserType;
+import topdeep.autotest.entity.constant.EnumType.LocateType;
 import topdeep.autotest.entity.constant.EnumType.TestContextDataKey;
 import topdeep.autotest.entity.constant.EnumType.TestContextParamKey;
 import topdeep.autotest.entity.constant.EnumType.TestResult;
@@ -40,20 +41,11 @@ import topdeep.autotest.entity.execute.UserCaseActionExecute;
 import topdeep.autotest.entity.execute.UserCaseActionExecuteFactory;
 import topdeep.autotest.entity.execute.UserCaseExecute;
 
-/**
- * @author niexin
- *
- */
-/**
- * @author niexin
- *
- */
+
 public class BrowserUserCaseExecute implements UserCaseExecute {
 
-	/*
+	/**
 	 * 查出测试用例所关联的所有用例和用例相关联的测试数据，然后逐个用例的执行所有的测试动作
-	 * 
-	 * @see topdeep.autotest.entity.execute.UserCaseExecute#execute(topdeep.autotest.entity.db.AtTestUserCase)
 	 */
 	public TestResult execute(AtUserCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
 			 Map<String, Object> data) throws Exception {
@@ -92,11 +84,6 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		return userCaseResult;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.entity.execute.UserCaseExecute#beforeExecute(topdeep.autotest.entity.db.AtUserCase)
-	 */
 	public void beforeExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) throws Exception {
 		DesiredCapabilities capabilities = null;
 		if (context.getBrowser().equals(BrowserType.IE)) {
@@ -107,18 +94,14 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 			capabilities = DesiredCapabilities.firefox();
 		}
 		String url = context.getProtocol()+"://"+context.getHost()+":"+context.getPort()+"/wd/hub";
-		URL remoteAddress = new URL(url) ;
-		data.put(TestContextParamKey.ServeUrl.getValue(), url);
-		WebDriver wd = new RemoteWebDriver(remoteAddress , capabilities);
+		String serviceUrl =context.getServiceUrl();
+		URL hostUrl = new URL(url) ;
+		data.put(TestContextParamKey.ServeUrl.getValue(), serviceUrl);
+		WebDriver wd = new RemoteWebDriver(hostUrl , capabilities);
 		data.put(TestContextDataKey.Driver.getValue(), wd);
 		
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see topdeep.autotest.entity.execute.UserCaseExecute#afterExecute(topdeep.autotest.entity.db.AtUserCase)
-	 */
 	public void afterExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) {
 		String key = TestContextDataKey.Driver.getValue();
 		if (data.containsKey(key)) {
@@ -137,7 +120,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 	 * @param targetId 目标htmlId
 	 * @param timeout 以秒为单位
 	 */
-	public boolean waitElement(WebDriver webDriver, final String locateType, final String targetParam, int timeout) {
+	public boolean waitElement(WebDriver webDriver, final LocateType locateType, final String targetParam, int timeout) {
 		WebElement element = (new WebDriverWait(webDriver, timeout)).until(new ExpectedCondition<WebElement>() {
 			public WebElement apply(WebDriver d) {
 				WebElement e = getWebElement(d, locateType, targetParam);
@@ -151,28 +134,29 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		return element != null;
 	}
 
-	private WebElement getWebElement(WebDriver webDriver, String locateType, String targetParam) {
-		if ("id".equals(locateType)) {
+	private WebElement getWebElement(WebDriver webDriver, LocateType locateType, String targetParam) {
+		String type = locateType.getName();
+		if ("id".equals(type)) {
 			return getWebElementById(webDriver, targetParam);
-		} else if ("class".equals(locateType)) {
+		} else if ("class".equals(type)) {
 			return getWebElementByClass(webDriver, targetParam);
-		} else if ("cssSelector".equals(locateType)) {
+		} else if ("cssSelector".equals(type)) {
 			return getWebElementByCssSelector(webDriver, targetParam);
-		} else if("linkText".equals(locateType)){
+		} else if("linkText".equals(type)){
 			return getWebElementByLinkText(webDriver, targetParam);
-		} else if("name".equals(locateType)){
+		} else if("name".equals(type)){
 			return getWebElementByName(webDriver, targetParam);
-		} else if("PartiaLinkText".equals(locateType)){
+		} else if("PartiaLinkText".equals(type)){
 			return getWebElementByPartialLinkText(webDriver, targetParam);
-		} else if("tagName".equals(locateType)){
+		} else if("tagName".equals(type)){
 			return getWebElementByTagName(webDriver, targetParam);
-		} else if("xpath".equals(locateType)){
+		} else if("xpath".equals(type)){
 			return getWebElementByXpathExpression(webDriver, targetParam);
 		} 
 		return null;
 	}
 
-	public boolean setInputElementValue(WebDriver webDriver, String locateType, String targetParam, String inputContent) {
+	public boolean setInputElementValue(WebDriver webDriver, LocateType locateType, String targetParam, String inputContent) {
 		WebElement input = getWebElement(webDriver, locateType, targetParam);
 		if (input != null) {
 			input.sendKeys(inputContent);
@@ -181,7 +165,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		return false;
 	}
 	
-	public String getInputElementText(WebDriver webDriver,String locateType,String targetParam){
+	public String getInputElementText(WebDriver webDriver,LocateType locateType,String targetParam){
 		WebElement input = getWebElement(webDriver, locateType, targetParam);
 		if(input !=null){
 			return input.getText();
@@ -218,7 +202,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		webDriver.manage().timeouts().setScriptTimeout(seconds, TimeUnit.SECONDS);
 	}
 
-	public boolean elementClick(WebDriver webDriver, String locateType, String targetParam) {
+	public boolean elementClick(WebDriver webDriver, LocateType locateType, String targetParam) {
 		WebElement element = getWebElement(webDriver, locateType, targetParam);
 		if (element != null) {
 			element.click();
@@ -339,7 +323,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		return webDriver.getTitle();
 	}
 
-	public String getElementValue(WebDriver webDriver, String locateType, String targetParam) {
+	public String getElementValue(WebDriver webDriver, LocateType locateType, String targetParam) {
 		WebElement input = getWebElement(webDriver, locateType, targetParam);
 		if (input != null) {
 			return input.getText();

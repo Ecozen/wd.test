@@ -1,5 +1,6 @@
 package topdeep.autotest.entity.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Sheet;
@@ -9,7 +10,7 @@ import topdeep.autotest.entity.data.util.ExcelReader;
 
 public class AtUserCase {
 	private String userCaseId;
-	private List<AtUserCaseAction> userCase;
+	private List<AtUserCaseAction> userCase = new ArrayList<AtUserCaseAction>();
 	
 	public AtUserCase(){
 		
@@ -17,7 +18,7 @@ public class AtUserCase {
 	
 	public void add(AtUserCaseAction action){
 		if (this.userCaseId.equals(action.getUserCaseId())) {
-			userCase.add(Integer.parseInt(action.getActionExecuteId()),action);
+			userCase.add(action);
 		}
 	}
 

@@ -50,18 +50,18 @@ private void getWorkBook(){
 }
 
   @BeforeTest
-  @Parameters({"sheetName","workBook"})
-  public void beforeTest(String sheetName,String path) throws MalformedURLException {
+  @Parameters({"sheetName","workBook","serviceUrl"})
+  public void beforeTest(String sheetName,String path,String serviceUrl) throws MalformedURLException {
       filePath = path;
       getWorkBook();
       
 	  context.setPlatform();
 	  context.setBrowser(BrowserType.Firefox);
 	  context.setProtocol("http");
-	  context.setHost("192.168.0.104");
+	  context.setHost("192.168.0.162");
 	  context.setPort("4444");
-	  
-	  userCase = reader.getUserCace(sheetName, wb);
+	  context.setServiceUrl(serviceUrl);
+	  userCase = reader.getUserCace(sheetName, wb,sheetName);
   }
   @AfterTest
   public void afterTest() {

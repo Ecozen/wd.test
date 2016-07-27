@@ -16,7 +16,7 @@ import topdeep.autotest.entity.data.AtUserCaseAction;
  * @author niexin
  *
  */
-public interface UserCaseActionExecute extends BaseExecute {
+public interface UserCaseActionExecute {
 	/**
 	 * 根据设置的参数更新动作的描述
 	 * 
@@ -30,9 +30,8 @@ public interface UserCaseActionExecute extends BaseExecute {
 	 * 
 	 * @param userCaseExecute
 	 * @param userCaseAction
-	 * @param testData
+	 * @param paramList
 	 * @param data
-	 * @param taskLog
 	 * @return
 	 * @throws Exception
 	 */

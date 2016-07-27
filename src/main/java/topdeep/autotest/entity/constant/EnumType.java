@@ -176,10 +176,10 @@ public class EnumType {
 	}
 	
 	public enum LocateType{
-		Id("id选择器","1"),
-		CssSelector("css选择器","2"),
-		ClassName("classname选择器","3"),
-		LinkText("连接选择器","4");
+		Id("id","0"),
+		CssSelector("cssSelector","1"),
+		ClassName("classname","2"),
+		LinkText("link","3");
 		private String name;
 
 		public String getName() {

@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="classes">
   <test name="Test">
   
-  <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_wxBind_action.xls" />
+  <parameter name="workBook" value="./Lionfund_wxBind_action.xls" />
   <parameter name="sheetName" value="Lionfund_wxBind_action" />
   <parameter name="serviceUrl" value="http://192.168.0.104:8090" />
   

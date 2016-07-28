@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="10283" started-at="2016-07-27T10:48:05Z" finished-at="2016-07-27T10:48:15Z">
+  <suite name="Suite" duration-ms="8835" started-at="2016-07-28T05:52:35Z" finished-at="2016-07-28T05:52:44Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="10283" started-at="2016-07-27T10:48:05Z" finished-at="2016-07-27T10:48:15Z">
+    <test name="Test" duration-ms="8835" started-at="2016-07-28T05:52:35Z" finished-at="2016-07-28T05:52:44Z">
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="beforeTest" is-config="true" duration-ms="526" started-at="2016-07-27T18:48:05Z" finished-at="2016-07-27T18:48:05Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="beforeTest" is-config="true" duration-ms="449" started-at="2016-07-28T13:52:35Z" finished-at="2016-07-28T13:52:36Z">
           <params>
             <param index="0">
               <value>
@@ -28,11 +28,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="executeTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="executeTest" duration-ms="9677" started-at="2016-07-27T18:48:05Z" finished-at="2016-07-27T18:48:15Z">
+        <test-method status="PASS" signature="executeTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="executeTest" duration-ms="8356" started-at="2016-07-28T13:52:36Z" finished-at="2016-07-28T13:52:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- executeTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="afterTest" is-config="true" duration-ms="1" started-at="2016-07-27T18:48:15Z" finished-at="2016-07-27T18:48:15Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest@1988802]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-07-28T13:52:44Z" finished-at="2016-07-28T13:52:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

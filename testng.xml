@@ -6,6 +6,7 @@
   <parameter name="workBook" value="./Lionfund_wxBind_action.xls" />
   <parameter name="sheetName" value="Lionfund_wxBind_action" />
   <parameter name="serviceUrl" value="http://192.168.0.104:8090" />
+  <parameter name="testEnv" value="${testEnv}" />
   
   <classes>
   	<class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest"></class>

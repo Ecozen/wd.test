@@ -1,17 +1,12 @@
 package topdeep.autotest.util.impl.testng;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
 import org.testng.log4testng.Logger;
 
-import topdeep.autotest.entity.constant.EnumType.TestContextDataKey;
+import topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest;
 
 public class TestNgListener extends TestListenerAdapter {
 	
@@ -51,9 +46,17 @@ public class TestNgListener extends TestListenerAdapter {
 	}
 	
 	private void takeScreenShot(ITestResult tr) {
-		Map<String, Object> data = null;
-        WebDriver driver = (WebDriver)data.get(TestContextDataKey.Driver.getValue());
-        
+        try {
+        	BrowserUserCaseExecuteTest tb = (BrowserUserCaseExecuteTest) tr.getInstance();
+            WebDriver driver = tb.getDriver();
+            ScreenShot shot = new ScreenShot(driver);
+            shot.takeScreenshot();
+            logger.info(driver.getTitle());
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {         
+            e.printStackTrace();
+        }
 	}
 
 }

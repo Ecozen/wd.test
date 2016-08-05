@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_wxBind_action.xls"/>
-  <parameter name="sheetName" value="Lionfund_wxBind_action"/>
+  <parameter name="workBook" value="E:\\AutoTest_Script\\Lionfund_currencyPurchase_success.xls"/>
+  <parameter name="sheetName" value="Lionfund_openAccount_action"/>
   <parameter name="serviceUrl" value="http://192.168.0.104:8090"/>
-  <test name="Test(failed)" parallel="classes">
-    <parameter name="workBook" value="C:\Users\Administrator\Downloads\Lionfund_wxBind_action.xls"/>
-    <parameter name="sheetName" value="Lionfund_wxBind_action"/>
+  <listeners>
+    <listener class-name="topdeep.autotest.util.impl.testng.TestNgListener"/>
+  </listeners>
+  <test name="lionfund(failed)" parallel="classes">
+    <parameter name="workBook" value="E:\\AutoTest_Script\\Lionfund_currencyPurchase_success.xls"/>
+    <parameter name="sheetName" value="Lionfund_openAccount_action"/>
     <parameter name="serviceUrl" value="http://192.168.0.104:8090"/>
     <classes>
       <class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest">
@@ -17,5 +20,5 @@
         </methods>
       </class> <!-- topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- lionfund(failed) -->
 </suite> <!-- Failed suite [Suite] -->

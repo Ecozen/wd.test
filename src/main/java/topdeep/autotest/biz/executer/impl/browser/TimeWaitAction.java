@@ -24,7 +24,7 @@ public class TimeWaitAction implements UserCaseActionExecute {
 	@Override
 	public TestResult execute(UserCaseExecute userCaseExecute, AtUserCaseAction userCaseAction, List<AtObjParams> paramList, Map<String, Object> data
 			) throws Exception {
-			int waitTime = Integer.parseInt(userCaseAction.getInputValue());
+			int waitTime = Integer.parseInt(userCaseAction.getTime());
 //			taskLog.debug("wait time: " + waitTime);
 			Thread.sleep(waitTime);
 		return TestResult.Success;

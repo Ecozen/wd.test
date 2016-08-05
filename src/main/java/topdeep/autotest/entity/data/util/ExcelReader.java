@@ -37,7 +37,7 @@ public class ExcelReader {
 		return userCaseAction;
 	}
 	
-	public AtUserCase getUserCace(String sheetName,Workbook wb,String userCaseId){
+	public AtUserCase getUserCase(String sheetName,Workbook wb,String userCaseId){
 		Sheet sheet = wb.getSheet(sheetName);
 		int rownum = sheet.getLastRowNum();
 		headers = getHead(sheet, 0);

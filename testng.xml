@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes">
-  <test name="Test">
   
-  <parameter name="workBook" value="./Lionfund_wxBind_action.xls" />
-  <parameter name="sheetName" value="Lionfund_wxBind_action" />
+  <test name="lionfund">
+  <parameter name="workBook" value="E:\\AutoTest_Script\\Lionfund_currencyPurchase_success.xls" />
+  <parameter name="sheetName" value="Lionfund_openAccount_action" />
   <parameter name="serviceUrl" value="http://192.168.0.104:8090" />
-  
   <classes>
   	<class name="topdeep.autotest.biz.executer.impl.browser.BrowserUserCaseExecuteTest"></class>
   </classes>
-  </test> <!-- Test -->
+  </test>
+ 
+<listeners>
+<listener class-name="topdeep.autotest.util.impl.testng.TestNgListener"></listener>
+</listeners>
+<!-- 
+<test name="utils">
+<classes>
+<class name="auto.test.wd.test.ScreenShotTest"></class>
+</classes>
+</test>
+ -->
+
 </suite> <!-- Suite -->

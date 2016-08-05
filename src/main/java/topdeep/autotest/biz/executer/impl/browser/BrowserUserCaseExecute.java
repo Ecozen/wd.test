@@ -72,19 +72,19 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 			UserCaseActionExecute actionExecute = UserCaseActionExecuteFactory.getUserCaseActionExcuter(item.getActionType());
 			TestResult result = actionExecute.execute(this, item, paramList,data);
 			
-			if (result != TestResult.Success) {
-				userCaseResult = result;
-			}
-			if (userCaseResult != TestResult.Success) {
-				break;
-			}
+//			if (result != TestResult.Success) {
+//				userCaseResult = result;
+//			}
+//			if (userCaseResult != TestResult.Success) {
+//				break;
+//			}
 			actionNo++;
 		}
 
 		return userCaseResult;
 	}
 
-	public void beforeExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) throws Exception {
+	public void beforeExecute(AtTestContext context, Map<String, Object> data) throws Exception {
 		DesiredCapabilities capabilities = null;
 		if (context.getBrowser().equals(BrowserType.IE)) {
 			capabilities = DesiredCapabilities.internetExplorer();
@@ -102,7 +102,7 @@ public class BrowserUserCaseExecute implements UserCaseExecute {
 		
 	}
 
-	public void afterExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) {
+	public void afterExecute(AtTestContext context, Map<String, Object> data) {
 		String key = TestContextDataKey.Driver.getValue();
 		if (data.containsKey(key)) {
 			WebDriver wd = (WebDriver) data.get(key);

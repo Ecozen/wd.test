@@ -17,10 +17,10 @@ import topdeep.autotest.entity.data.AtTestResultUserCase;
  *
  */
 public interface UserCaseExecute extends BaseExecute {
-	void beforeExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data) throws Exception;
+	void beforeExecute( AtTestContext context, Map<String, Object> data) throws Exception;
 
 	TestResult execute(AtUserCase userCase, AtTestContext context, AtTestResult testResult, AtTestResultUserCase testResultUserCase,
 			Map<String, Object> data) throws Exception;
 
-	void afterExecute(AtUserCase userCase, AtTestContext context, Map<String, Object> data);
+	void afterExecute( AtTestContext context, Map<String, Object> data);
 }
